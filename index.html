@@ -1,28 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Hamdy El-Saeedy | Penetration Tester</title>
-    <!-- PROFILE IMAGE (paste inside header) -->
-<div style="text-align:center; margin-top:10px;">
-  <img src="profile.jpg" alt="Hamdy El-Saeedy" style="width:140px; height:140px; border-radius:8px; object-fit:cover; border:2px solid #38bdf8;">
-</div>
-
+  <meta charset="UTF-8">
+  <title>Hamdy El-Saeedy | Penetration Tester</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 40px 20px;
+      background: linear-gradient(90deg,#0b1220,#0f172a);
+    }
+    header img.profile {
+      width: 140px;
+      height: 140px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid #38bdf8;
+      display: block;
+      margin: 12px auto;
+    }
+    main { max-width: 900px; margin: 30px auto; padding: 0 16px; }
+    section.card {
+      margin: 20px 0;
+      padding: 20px;
+      background: #1e293b;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      text-align: left;
+    }
+    h1 { font-size: 1.9rem; color:#38bdf8; margin:0; }
+    h3 { color: #94a3b8; margin:6px 0 12px 0; font-weight:400; }
+    h2 { color: #38bdf8; margin-top:0; }
+    ul { line-height:1.7; padding-left: 1rem; }
+    a { color: #7dd3fc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { text-align:center; color:#94a3b8; padding:20px 0 40px; }
+    @media (max-width:600px){
+      header img.profile { width:110px; height:110px; }
+      h1 { font-size:1.4rem; }
+    }
+  </style>
 </head>
-<body style="font-family: Arial; text-align:center; background:#0f172a; color:#e2e8f0; padding:50px;">
+<body>
+  <header>
     <h1>Hamdy Mohamed Mohamed El-Saeedy</h1>
     <h3>Information Security Student | Junior Penetration Tester</h3>
-    <p>Passionate about cybersecurity, ethical hacking, and web security.</p>
-    <p>📍 Cairo, Egypt · 📧 hamdyels2004@gmail.com</p>
-    <hr style="width:50%; margin:30px auto;">
- <section>
-  <h2>Profiles</h2>
-  <p>
-    🔗 <strong>GitHub:</strong> <a href="https://github.com/Hamdy2004-elseady" target="_blank" rel="noopener">github.com/Hamdy2004-elseady</a><br>
-    💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/%D8%AD%D9%85%D8%AF%D9%8A-%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF%D9%8A-307930388" target="_blank" rel="noopener">linkedin.com/in/hamdy-el-saeedy</a><br>
-    🧠 <strong>TryHackMe:</strong> <a href="https://tryhackme.com/p/hamdyels2004" target="_blank" rel="noopener">tryhackme.com/p/hamdyels2004</a>
-  </p>
-</section>
+    <p>📍 Cairo, Egypt · 📧 <a href="mailto:hamdyels2004@gmail.com">hamdyels2004@gmail.com</a> · ☎ +20 01008041210</p>
 
+    <!-- PROFILE IMAGE -->
+    <img src="profile.jpg" alt="Hamdy El-Saeedy" class="profile">
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>About Me</h2>
+      <p>Motivated Cybersecurity student specializing in Information Security and Penetration Testing. Experienced with tools like Burp Suite and Nmap. Familiar with web vulnerabilities such as SQL Injection, XSS, and HTML Injection. Seeking hands-on internships to grow practical skills.</p>
+    </section>
+
+    <section class="card">
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Programming:</strong> Python, C++</li>
+        <li><strong>Tools:</strong> Burp Suite, Nmap</li>
+        <li><strong>Networking:</strong> TCP/IP, HTTP, DNS basics</li>
+        <li><strong>OS:</strong> Linux (basic commands), Windows</li>
+        <li><strong>Web Security:</strong> SQL Injection, XSS, HTML Injection</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Projects &amp; Labs</h2>
+      <ul>
+        <li><strong>Web Security Labs:</strong> Practiced SQLi and XSS on DVWA &amp; Mutillidae using Burp Suite.</li>
+        <li><strong>Network Scanning:</strong> Nmap enumeration to identify open ports and services.</li>
+        <li><strong>Python Automation:</strong> Small scripts for recon and basic enumeration.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Education</h2>
+      <p><strong>Benha University</strong> — Faculty of Computers and Information</p>
+      <p>BSc Computer Science (Information Security) — 3rd Year</p>
+    </section>
+
+    <section class="card">
+      <h2>Profiles</h2>
+      <p>
+        🔗 <strong>GitHub:</strong> <a href="https://github.com/Hamdy2004-elseady" target="_blank" rel="noopener">github.com/Hamdy2004-elseady</a><br>
+        💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/%D8%AD%D9%85%D8%AF%D9%8A-%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF%D9%8A-307930388" target="_blank" rel="noopener">linkedin.com/in/hamdy-el-saeedy</a><br>
+        🧠 <strong>TryHackMe:</strong> <a href="https://tryhackme.com/p/hamdyels2004" target="_blank" rel="noopener">tryhackme.com/p/hamdyels2004</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Hamdy El-Saeedy — Information Security Student | Benha University</p>
+  </footer>
 </body>
 </html>
