@@ -1,107 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hamdy El-Saeedy | Penetration Tester</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header {
-      padding: 40px 20px;
-      background: linear-gradient(90deg,#0b1220,#0f172a);
-    }
-    header img.profile {
-      width: 140px;
-      height: 140px;
-      border-radius: 8px;
-      object-fit: cover;
-      border: 2px solid #38bdf8;
-      display: block;
-      margin: 12px auto;
-    }
-    main { max-width: 900px; margin: 30px auto; padding: 0 16px; }
-    section.card {
-      margin: 20px 0;
-      padding: 20px;
-      background: #1e293b;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-      text-align: left;
-    }
-    h1 { font-size: 1.9rem; color:#38bdf8; margin:0; }
-    h3 { color: #94a3b8; margin:6px 0 12px 0; font-weight:400; }
-    h2 { color: #38bdf8; margin-top:0; }
-    ul { line-height:1.7; padding-left: 1rem; }
-    a { color: #7dd3fc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    footer { text-align:center; color:#94a3b8; padding:20px 0 40px; }
-    @media (max-width:600px){
-      header img.profile { width:110px; height:110px; }
-      h1 { font-size:1.4rem; }
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hamdy El-Saeedy — Penetration Tester</title>
+
+<style>
+  :root{
+    --bg:#0a0f12;
+    --card:#071021;
+    --glass: rgba(255,255,255,0.03);
+    --neon:#22ee88;
+    --accent:#38bdf8;
+    --muted:#94a3b8;
+    --mono: "Courier New", Courier, monospace;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    background:
+      radial-gradient(1200px 600px at 10% 10%, rgba(56,189,248,0.06), transparent 8%),
+      radial-gradient(900px 500px at 95% 85%, rgba(34,238,136,0.03), transparent 8%),
+      var(--bg);
+    color:#e6eef8;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* top neon header */
+  header{
+    max-width:1100px;
+    margin:28px auto 6px;
+    padding:18px;
+    display:flex;
+    gap:18px;
+    align-items:center;
+  }
+  .avatar{
+    width:120px;height:120px;border-radius:14px;flex:0 0 120px;
+    object-fit:cover;border:2px solid rgba(56,189,248,0.14);
+    box-shadow:0 6px 24px rgba(34,238,136,0.03), 0 3px 8px rgba(0,0,0,0.6);
+  }
+  .title{
+    flex:1;
+  }
+  h1{
+    margin:0;font-size:1.6rem;color:var(--neon);
+    font-family: var(--mono);
+    letter-spacing:0.6px;
+    text-shadow:0 0 8px rgba(34,238,136,0.06);
+  }
+  h2.subtitle{
+    margin:8px 0 0 0;color:var(--accent);font-weight:500;font-size:0.95rem;
+  }
+  .contact{margin-top:8px;color:var(--muted);font-size:0.9rem}
+
+  main{max-width:1100px;margin:12px auto;padding:0 16px 60px}
+
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr 360px;
+    gap:18px;
+    align-items:start;
+  }
+
+  /* left column content */
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.03);
+    border-radius:12px;padding:18px;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  }
+
+  .section-title{
+    display:flex;align-items:center;gap:10px;margin-bottom:12px;
+  }
+  .dot{width:10px;height:10px;background:var(--neon);border-radius:3px;box-shadow:0 0 10px var(--neon)}
+
+  p, li{color:#dbe8f8}
+  ul{margin:0;padding-left:18px}
+
+  /* skills as tags */
+  .skills{display:flex;flex-wrap:wrap;gap:8px}
+  .skill{
+    background:transparent;border:1px solid rgba(56,189,248,0.12);
+    padding:6px 10px;border-radius:8px;color:var(--accent);font-size:0.85rem;
+    font-family:var(--mono);
+  }
+
+  /* code-like box for projects */
+  .code{
+    background:rgba(0,0,0,0.18);border:1px solid rgba(56,189,248,0.06);
+    padding:12px;border-radius:8px;color:#cfeee0;font-family:var(--mono);font-size:0.95rem;
+  }
+
+  /* right column */
+  aside .card{
+    position:sticky;top:18px;
+  }
+  .links a{display:block;color:var(--neon);text-decoration:none;margin:6px 0;font-family:var(--mono)}
+  .links a small{color:var(--muted);display:block;font-family:Inter;font-weight:400}
+
+  footer{max-width:1100px;margin:30px auto 80px;color:var(--muted);text-align:center;font-size:0.9rem}
+
+  /* little animations */
+  .glow{box-shadow: 0 0 18px rgba(56,189,248,0.08), inset 0 -6px 40px rgba(34,238,136,0.02)}
+  .scan{
+    height:6px;background:linear-gradient(90deg, transparent, rgba(56,189,248,0.18), transparent);
+    border-radius:999px;margin-top:12px;overflow:hidden;position:relative;
+  }
+  .scan::after{
+    content:"";position:absolute;left:-30%;top:0;width:30%;height:100%;
+    background:linear-gradient(90deg, rgba(255,255,255,0.05), rgba(56,189,248,0.35), rgba(255,255,255,0.05));
+    animation:scanx 3.5s linear infinite;
+  }
+  @keyframes scanx{to{left:130%}}
+
+  /* responsive */
+  @media (max-width:980px){
+    .grid{grid-template-columns:1fr}
+    aside .card{position:relative;top:0}
+  }
+</style>
 </head>
 <body>
-  <header>
+
+<header>
+  <img src="profile.jpg" alt="Hamdy El-Saeedy" class="avatar" />
+  <div class="title">
     <h1>Hamdy Mohamed Mohamed El-Saeedy</h1>
-    <h3>Information Security Student | Junior Penetration Tester</h3>
-    <p>📍 Cairo, Egypt · 📧 <a href="mailto:hamdyels2004@gmail.com">hamdyels2004@gmail.com</a> · ☎ +20 01008041210</p>
+    <div class="subtitle-row">
+      <h2 class="subtitle">Information Security Student · Junior Penetration Tester</h2>
+      <div class="contact">📍 Cairo, Egypt · ✉️ <a href="mailto:hamdyels2004@gmail.com" style="color:var(--neon)">hamdyels2004@gmail.com</a> · ☎ +20 01008041210</div>
+    </div>
+    <div class="scan" aria-hidden="true"></div>
+  </div>
+</header>
 
-    <!-- PROFILE IMAGE -->
-    <img src="profile.jpg" alt="Hamdy El-Saeedy" class="profile">
-  </header>
+<main>
+  <div class="grid">
+    <!-- left column -->
+    <div>
+      <section class="card">
+        <div class="section-title"><div class="dot"></div><h2>About</h2></div>
+        <p style="margin-top:8px">
+          Motivated and curious Information Security student with hands-on labs in web application security and network scanning. Studied eJPT materials and practiced exploiting SQLi and XSS on lab VMs. I enjoy building small automation scripts in Python to speed up recon and enumeration.
+        </p>
+      </section>
 
-  <main>
-    <section class="card">
-      <h2>About Me</h2>
-      <p>Motivated Cybersecurity student specializing in Information Security and Penetration Testing. Experienced with tools like Burp Suite and Nmap. Familiar with web vulnerabilities such as SQL Injection, XSS, and HTML Injection. Seeking hands-on internships to grow practical skills.</p>
-    </section>
+      <section class="card" style="margin-top:14px">
+        <div class="section-title"><div class="dot"></div><h2>Technical Skills</h2></div>
+        <div class="skills" style="margin-bottom:8px">
+          <span class="skill">Python</span>
+          <span class="skill">C++</span>
+          <span class="skill">Burp Suite</span>
+          <span class="skill">Nmap</span>
+          <span class="skill">Linux</span>
+          <span class="skill">TCP/IP</span>
+          <span class="skill">HTTP</span>
+          <span class="skill">SQLi / XSS</span>
+        </div>
+        <div style="color:var(--muted);font-size:0.88rem">Tools & fundamentals that I apply in labs and penetration testing exercises.</div>
+      </section>
 
-    <section class="card">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><strong>Programming:</strong> Python, C++</li>
-        <li><strong>Tools:</strong> Burp Suite, Nmap</li>
-        <li><strong>Networking:</strong> TCP/IP, HTTP, DNS basics</li>
-        <li><strong>OS:</strong> Linux (basic commands), Windows</li>
-        <li><strong>Web Security:</strong> SQL Injection, XSS, HTML Injection</li>
-      </ul>
-    </section>
+      <section class="card" style="margin-top:14px">
+        <div class="section-title"><div class="dot"></div><h2>Projects & Labs</h2></div>
 
-    <section class="card">
-      <h2>Projects &amp; Labs</h2>
-      <ul>
-        <li><strong>Web Security Labs:</strong> Practiced SQLi and XSS on DVWA &amp; Mutillidae using Burp Suite.</li>
-        <li><strong>Network Scanning:</strong> Nmap enumeration to identify open ports and services.</li>
-        <li><strong>Python Automation:</strong> Small scripts for recon and basic enumeration.</li>
-      </ul>
-    </section>
+        <div class="code">
+          <strong>Web Security Lab:</strong> Practiced SQL Injection and XSS exploitation on DVWA and Mutillidae using Burp Suite and manual payloads.<br><br>
+          <strong>Network Scanning:</strong> Used Nmap for host discovery and port/service enumeration, documented findings and prioritized possible attack surfaces.<br><br>
+          <strong>Python Automation:</strong> Small recon scripts for HTTP scanning and simple payload injection automation.
+        </div>
+      </section>
 
-    <section class="card">
-      <h2>Education</h2>
-      <p><strong>Benha University</strong> — Faculty of Computers and Information</p>
-      <p>BSc Computer Science (Information Security) — 3rd Year</p>
-    </section>
+      <section class="card" style="margin-top:14px">
+        <div class="section-title"><div class="dot"></div><h2>Education</h2></div>
+        <p><strong>Benha University</strong> — Faculty of Computers & Information<br/>BSc Computer Science (Information Security) — 3rd Year</p>
+      </section>
+    </div>
 
-    <section class="card">
-      <h2>Profiles</h2>
-      <p>
-        🔗 <strong>GitHub:</strong> <a href="https://github.com/Hamdy2004-elseady" target="_blank" rel="noopener">github.com/Hamdy2004-elseady</a><br>
-        💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/%D8%AD%D9%85%D8%AF%D9%8A-%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF%D9%8A-307930388" target="_blank" rel="noopener">linkedin.com/in/hamdy-el-saeedy</a><br>
-        🧠 <strong>TryHackMe:</strong> <a href="https://tryhackme.com/p/hamdyels2004" target="_blank" rel="noopener">tryhackme.com/p/hamdyels2004</a>
-      </p>
-    </section>
-  </main>
+    <!-- right column -->
+    <aside>
+      <div class="card">
+        <div class="section-title"><div class="dot"></div><h2>Profiles</h2></div>
+        <div class="links">
+          <a href="https://github.com/Hamdy2004-elseady" target="_blank" rel="noopener">GitHub<br><small>github.com/Hamdy2004-elseady</small></a>
+          <a href="https://www.linkedin.com/in/%D8%AD%D9%85%D8%AF%D9%8A-%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF%D9%8A-307930388" target="_blank" rel="noopener">LinkedIn<br><small>linkedin.com/in/hamdy-el-saeedy</small></a>
+          <a href="https://tryhackme.com/p/hamdyels2004" target="_blank" rel="noopener">TryHackMe<br><small>tryhackme.com/p/hamdyels2004</small></a>
+        </div>
 
-  <footer>
-    <p>© 2025 Hamdy El-Saeedy — Information Security Student | Benha University</p>
-  </footer>
+        <hr style="border:none;border-top:1px dashed rgba(255,255,255,0.04);margin:12px 0">
+
+        <div style="color:var(--muted);font-size:0.92rem;margin-bottom:8px">
+          <strong>Contact</strong><br>
+          Cairo, Egypt · <a href="mailto:hamdyels2004@gmail.com" style="color:var(--accent)">hamdyels2004@gmail.com</a><br>
+          +20 01008041210
+        </div>
+
+        <div style="margin-top:10px;color:var(--muted);font-size:0.85rem">
+          <strong>Availability:</strong><br>Looking for internships & hands-on training in penetration testing.
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  © 2025 Hamdy El-Saeedy — Information Security Student · Benha University
+</footer>
+
 </body>
 </html>
