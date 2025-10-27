@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamdy El-Saeedy | Junior Penetration Tester</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(90deg, #1e293b, #0f172a);
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
+      color: #38bdf8;
+    }
+    h3 {
+      color: #94a3b8;
+      margin-top: 0;
+      font-weight: 400;
+    }
+    section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #1e293b;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+    h2 {
+      border-bottom: 2px solid #38bdf8;
+      padding-bottom: 5px;
+      color: #38bdf8;
+    }
+    p, li {
+      line-height: 1.7;
+      color: #e2e8f0;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li::before {
+      content: "• ";
+      color: #38bdf8;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Hamdy Mohamed Mohamed El-Saeedy</h1>
+    <h3>Information Security Student | Junior Penetration Tester</h3>
+    <p>📍 Cairo, Egypt · 📧 hamdyels2004@gmail.com · ☎ +20 01008041210</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>
+      Motivated and detail-oriented <strong>Cybersecurity Student</strong> specializing in
+      <strong>Information Security and Penetration Testing</strong>. Experienced with tools like
+      <strong>Burp Suite</strong> and <strong>Nmap</strong>, and familiar with vulnerabilities such as
+      <strong>SQL Injection</strong>, <strong>XSS</strong>, and <strong>HTML Injection</strong>.
+      Eager to grow in a professional environment that values learning, teamwork, and real-world security challenges.
+    </p>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Programming:</strong> Python (Basic), C++ (Basic)</li>
+      <li><strong>Security Tools:</strong> Burp Suite, Nmap</li>
+      <li><strong>Operating Systems:</strong> Linux (Basic), Windows</li>
+      <li><strong>Networking:</strong> TCP/IP, HTTP Fundamentals</li>
+      <li><strong>Web Vulnerabilities:</strong> SQL Injection, XSS, HTML Injection</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <p><strong>Benha University</strong> — Faculty of Computers and Information</p>
+    <p>Bachelor’s Degree in Computer Science (Information Security Major) — 3rd Year Student</p>
+  </section>
+
+  <section>
+    <h2>Projects & Labs</h2>
+    <ul>
+      <li>
+        <strong>Web Security Lab Practice:</strong> Performed hands-on labs on DVWA and Mutillidae. Practiced discovering and exploiting vulnerabilities such as SQL Injection and XSS using Burp Suite and manual methods.
+      </li>
+      <li>
+        <strong>Network Scanning Project:</strong> Conducted local network scanning using Nmap to identify open ports and services. Documented findings and analyzed possible attack surfaces.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Profiles</h2>
+    <p>
+      🔗 <strong>GitHub:</strong> <a href="https://github.com/Hamdy2004-elsaedy" target="_blank">github.com/Hamdy2004-elsaedy</a><br>
+      💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/hamdyels" target="_blank">linkedin.com/in/hamdyels</a><br>
+      🧠 <strong>TryHackMe:</strong> <a href="https://tryhackme.com/p/hamdyels" target="_blank">tryhackme.com/p/hamdyels</a>
+    </p>
