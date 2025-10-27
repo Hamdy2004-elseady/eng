@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects — Hamdy El-Saeedy</title>
+<style>
+:root{--bg:#000;--card:#141414;--text:#e6e6e6;--muted:#9aa0a6;--accent:#38bdf8;--mono:"Courier New",monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",Arial;background:var(--bg);color:var(--text)}
+nav{display:flex;justify-content:space-between;padding:12px 28px;background:#0b0b0b;border-bottom:1px solid rgba(255,255,255,0.03)}
+.logo{font-family:var(--mono);color:var(--accent)}
+.menu a{color:var(--muted);margin-left:20px;text-decoration:none}
+.container{max-width:1100px;margin:26px auto;padding:0 18px}
+.card{background:var(--card);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);margin-bottom:18px}
+.section-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.dot{width:10px;height:10px;background:var(--accent);border-radius:3px}
+pre{background:#0b1112;padding:12px;border-radius:8px;color:#cfeee0;overflow:auto;font-family:var(--mono);font-size:0.95rem}
+a{color:var(--accent)}
+.footer{max-width:1100px;margin:30px auto;color:var(--muted);text-align:center;padding:8px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">H4M-SEC</div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="labs.html">Labs</a>
+    <a href="tools.html">Tools</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="container">
+  <h2 style="margin-bottom:12px;color:var(--accent);font-family:var(--mono)">InsecureShop — Web App Assessment</h2>
+
+  <section class="card">
+    <div class="section-title"><div class="dot"></div><h4 style="color:var(--accent)">Project Overview</h4></div>
+    <p style="color:var(--muted)">This is a medium difficulty web application assessment (lab environment). Purpose: practise common web vulnerabilities and produce a short professional report.</p>
+  </section>
+
+  <section class="card">
+    <div class="section-title"><div class="dot"></div><h4 style="color:var(--accent)">Scope</h4></div>
+    <ul style="color:var(--muted);padding-left:18px;line-height:1.6">
+      <li>Target: InsecureShop (lab VM)</li>
+      <li>Focus: Authentication, input validation, and data leakage</li>
+      <li>Out of scope: Denial of Service, social engineering</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <div class="section-title"><div class="dot"></div><h4 style="color:var(--accent)">Tools Used</h4></div>
+    <p style="color:var(--muted)">Nmap, Burp Suite (community), sqlmap (selective), curl, browser devtools, small Python scripts</p>
+  </section>
+
+  <section class="card">
+    <div class="section-title"><div class="dot"></div><h4 style="color:var(--accent)">Steps — Methodology</h4></div>
+    <ol style="color:var(--muted);padding-left:18px;line-height:1.6">
+      <li>Recon: Nmap port scan and service enumeration.</li>
+      <li>Web discovery: map endpoints and parameters (Burp Spider / manual).</li>
+      <li>Auth tests: brute-force weak credentials (manual / wordlist) on login page.</li>
+      <li>Input validation: test forms for SQLi, XSS; use Burp to intercept and modify requests.</li>
+      <li>Post-exploitation: extract data from exploited endpoints and document impact.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <div class="section-title"><div class="dot"></div><h4 style="color:var(--accent)">Findings & Proof</h4></div>
+
+    <p style="color:var(--muted)"><strong>1) SQL Injection (medium)</strong> — Found in search parameter `q` on /search page. Exploitation allowed extraction of product IDs and usernames (read-only).</p>
+    <pre>Example payload (manual): ' OR '1'='1' -- </pre>
+    <p style="color:var(--muted)"><strong>2) Stored XSS (low)</strong> — Feedback form stored unsanitized input; proof: inserted &lt;script&gt;alert(1)&lt;/script&gt; triggered in admin view.</p>
+
+    <p style="color:var(--muted)"><strong>3) Weak credentials:</strong> found default admin/admin accessible on /admin — low impact if credentials are default.</p>
+  </section>
+
+  <section class="card">
+    <div class="section-title"><div class="dot"></div><h4 style="color:var(--accent)">Remediation Recommendations</h4></div>
+    <ul style="color:var(--muted);padding-left:18px;line-height:1.6">
+      <li>Parameterized queries / prepared statements for DB access.</li>
+      <li>Sanitize and escape user input; apply CSP headers to reduce XSS risk.</li>
+      <li>Enforce strong credentials and rate-limit login attempts.</li>
+      <li>Log and monitor admin access; remove default credentials.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <div class="section-title"><div class="dot"></div><h4 style="color:var(--accent)">Lessons Learned</h4></div>
+    <p style="color:var(--muted)">This lab taught a realistic workflow: reconnaissance → mapping → focused exploitation → remediation recommendations. Using Burp Suite for request manipulation and small Python scripts for automating data extraction sped the process.</p>
+  </section>
+
+  <section class="card">
+    <div class="section-title"><div class="dot"></div><h4 style="color:var(--accent)">Artifacts</h4></div>
+    <p style="color:var(--muted)">You can attach reports, screenshots, and scripts in a GitHub repo. Example: <a href="https://github.com/Hamdy2004-elseady/labs" target="_blank">github.com/Hamdy2004-elseady/labs</a> (create this repo and upload your lab README and screenshots).</p>
+  </section>
+
+</main>
+
+<div class="footer">© 2025 Hamdy El-Saeedy — Projects</div>
+</body>
+</html>
