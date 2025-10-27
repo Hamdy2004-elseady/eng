@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Labs — Hamdy</title>
+<style>
+:root{--bg:#000;--card:#141414;--text:#e6e6e6;--muted:#9aa0a6;--accent:#38bdf8;--mono:"Courier New",monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:"Segoe UI",Arial;background:var(--bg);color:var(--text)}
+nav{display:flex;justify-content:space-between;padding:12px 28px;background:#0b0b0b;border-bottom:1px solid rgba(255,255,255,0.03)}
+.menu a{color:var(--muted);margin-left:18px;text-decoration:none}
+.container{max-width:1100px;margin:24px auto;padding:0 18px}
+.card{background:var(--card);padding:16px;border-radius:10px;margin-bottom:16px;border:1px solid rgba(255,255,255,0.02)}
+pre{background:#0b1112;padding:12px;border-radius:8px;color:#cfeee0;overflow:auto;font-family:var(--mono)}
+.footer{max-width:1100px;margin:30px auto;color:var(--muted);text-align:center;padding:8px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo" style="font-family:var(--mono);color:var(--accent)">H4M-SEC</div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="labs.html">Labs</a>
+    <a href="tools.html">Tools</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="container">
+  <h2 style="color:var(--accent);font-family:var(--mono);margin-bottom:12px">Labs & Reports</h2>
+
+  <section class="card">
+    <h3 style="color:var(--accent);margin-bottom:8px;font-family:var(--mono)">DVWA — SQLi Practice</h3>
+    <p style="color:var(--muted)">Environment: DVWA local VM. Focus: boolean-based and error-based SQL injection on login/search forms. Tools: Burp Suite, sqlmap (selective), browser devtools.</p>
+    <pre># Steps
+1. Set DVWA security to low
+2. Intercept request with Burp
+3. Inject payloads ' OR '1'='1' --
+    </pre>
+  </section>
+
+  <section class="card">
+    <h3 style="color:var(--accent);font-family:var(--mono)">Mutillidae — XSS storage</h3>
+    <p style="color:var(--muted)">Stored XSS in feedback forms; demonstrate PoC and recommend CSP and input sanitization.</p>
+  </section>
+
+  <section class="card">
+    <h3 style="color:var(--accent);font-family:var(--mono)">Network Scanning — Nmap</h3>
+    <p style="color:var(--muted)">Used Nmap scripts for service detection; documented open ports and suggested hardening steps.</p>
+  </section>
+
+</main>
+
+<div class="footer">© 2025 Hamdy — Labs</div>
+</body>
+</html>
